@@ -73,9 +73,13 @@ src/
 
 ## Deployment
 
-Deploy the dist/ output to Vercel or Netlify. Remember to add the three VITE_* environment
-variables in your hosting provider's dashboard (Vercel: Project Settings -> Environment Variables).
+Deploy: https://anilsuperapp.vercel.app
 
 ## Design Reference
 
 Figma: https://www.figma.com/design/8meikbND92bsdBPJQlE1XS/Super-App
+
+## Author 
+**Anil Kumar**
+
+
