@@ -1,8 +1,5 @@
 import axios from "axios";
 
-// Currents API supports direct browser requests in production (CORS-permissive),
-// unlike NewsAPI.org's free tier which only works on localhost.
-// Get a free key at https://currentsapi.services/en
 const CURRENTS_API_KEY = import.meta.env.VITE_NEWS_API_KEY || "";
 const BASE_URL = "https://api.currentsapi.services/v1";
 
