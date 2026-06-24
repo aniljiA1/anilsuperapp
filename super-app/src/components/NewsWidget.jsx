@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchTopHeadlines } from "../services/newsApi";
 
 const ROTATE_INTERVAL_MS = 2000;
+const PLACEHOLDER = "https://placehold.co/600x300/1c1c1c/7ee787?text=Top+News";
 
 const NewsWidget = () => {
   const [articles, setArticles] = useState([]);
@@ -43,14 +44,15 @@ const NewsWidget = () => {
       {!loading && error && <p className="text-amber-400 text-sm leading-relaxed">{error}</p>}
       {!loading && !error && current && (
         <div className="flex-1 flex flex-col">
-          {current.urlToImage && (
-            <img
-              src={current.urlToImage}
-              alt={current.title}
-              className="w-full h-32 object-cover rounded-lg mb-3"
-              onError={(e) => (e.target.style.display = "none")}
-            />
-          )}
+          <img
+            src={current.urlToImage || PLACEHOLDER}
+            alt={current.title}
+            className="w-full h-32 object-cover rounded-lg mb-3 bg-black/30"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = PLACEHOLDER;
+            }}
+          />
           <p className="text-xs text-gray-500 mb-1">
             {current.source?.name} •{" "}
             {current.publishedAt && new Date(current.publishedAt).toLocaleDateString()}
