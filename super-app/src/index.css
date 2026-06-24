@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #f1f1f1;
+}
+
+* { box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #2e2e2e; border-radius: 8px; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(126, 231, 135, 0.15);
+  color: #7ee787;
+  font-size: 0.85rem;
+  border: 1px solid rgba(126, 231, 135, 0.4);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7ee787, #4caf50);
+  color: #06140a;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 14px 0;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(126, 231, 135, 0.25);
+}
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.field-input {
+  width: 100%;
+  background: #1c1c1c;
+  border: 1px solid #2e2e2e;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #f1f1f1;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.field-input:focus { border-color: #7ee787; }
+.field-error { border-color: #ff6b6b !important; }
+.error-text { color: #ff6b6b; font-size: 0.8rem; margin-top: 4px; display: block; }
+
+.card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.card-hover:hover { transform: scale(1.05); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
